@@ -18,7 +18,7 @@ namespace LR4
         private int countButtonMouse;
         private double widthScreen;
         private string diskNames;
-        private string selectedDiskPath;
+        private string selectedPath;
         
         public Form1()
         {
@@ -47,6 +47,7 @@ namespace LR4
             countButtonMouse = SystemInformation.MouseButtons;
             widthScreen = SystemParameters.PrimaryScreenWidth;
             diskNames = getDriveName();
+            selectedPath = "";
         }
 
         private byte[] getHash(string inputString)
@@ -111,6 +112,18 @@ namespace LR4
         {
             initInfoAboutComputer();
             showInfoInForm();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            DialogResult result = folderBrowserDialog.ShowDialog();
+            
+            if (result == DialogResult.OK)
+            {
+                selectedPath = folderBrowserDialog.SelectedPath;
+                label17.Text = "Вибраний шлях: " + selectedPath;
+            }
         }
     }
 }
