@@ -27,7 +27,7 @@ namespace LR1
             InitializeComponent();
         }
 
-        private void initCurrentDiskVolume()
+        private void InitCurrentDiskVolume()
         {
             string currentDirectory = Directory.GetCurrentDirectory();
             string currentDriverName = currentDirectory.Substring(0, 3);
@@ -42,7 +42,7 @@ namespace LR1
             }
         }
         
-        private string getDriveName()
+        private string GetDriveName()
         {
             string driverNames = "";
             DriveInfo[] allDrives = DriveInfo.GetDrives();
@@ -55,7 +55,7 @@ namespace LR1
             return driverNames;
         }
         
-        private void initInfoAboutComputer()
+        private void InitInfoAboutComputer()
         {
             userName = Environment.UserName;
             computerName = Environment.MachineName;
@@ -63,33 +63,33 @@ namespace LR1
             pathOsConfig = Environment.GetFolderPath(Environment.SpecialFolder.Windows);
             countButtonMouse = SystemInformation.MouseButtons;
             widthScreen = SystemParameters.PrimaryScreenWidth;
-            diskNames = getDriveName();
-            initCurrentDiskVolume();
+            diskNames = GetDriveName();
+            InitCurrentDiskVolume();
         }
 
-        private byte[] getHash(string inputString)
+        private byte[] GetHash(string inputString)
         {
             using (HashAlgorithm algorithm = SHA256.Create())
                 return algorithm.ComputeHash(Encoding.UTF8.GetBytes(inputString));
         }
         
-        private string getHashString(string inputString)
+        private string GetHashString(string inputString)
         {
             StringBuilder sb = new StringBuilder();
-            foreach (byte b in getHash(inputString))
+            foreach (byte b in GetHash(inputString))
                 sb.Append(b.ToString("X2"));
 
             return sb.ToString();
         }
 
-        private string getHashAboutComputer()
+        private string GetHashAboutComputer()
         {
             string stringForHash = userName + computerName + pathOs + pathOsConfig + countButtonMouse + widthScreen +
                                    diskNames + currentDiskVolume;
-            return getHashString(stringForHash);
+            return GetHashString(stringForHash);
         }
 
-        private string getHashFromRegistry()
+        private string GetHashFromRegistry()
         {
             string keyPath = @"Software";
             RegistryKey registerKey = Registry.CurrentUser.CreateSubKey(keyPath);
@@ -97,10 +97,10 @@ namespace LR1
             return registerKey.GetValue("Liashenko").ToString();
         }
 
-        private bool isEqualHash()
+        private bool IsEqualHash()
         {
-            string computerHash = getHashAboutComputer();
-            string registerHash = getHashFromRegistry();
+            string computerHash = GetHashAboutComputer();
+            string registerHash = GetHashFromRegistry();
 
             return computerHash == registerHash;
         }
@@ -186,8 +186,8 @@ namespace LR1
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
-            initInfoAboutComputer();
-            bool isVerify = isEqualHash();
+            InitInfoAboutComputer();
+            bool isVerify = IsEqualHash();
 
             if (isVerify)
             {

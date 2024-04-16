@@ -29,7 +29,7 @@ namespace LR4
             InitializeComponent();
         }
 
-        private string getDriveName()
+        private string GetDriveName()
         {
             string driverNames = "";
             DriveInfo[] allDrives = DriveInfo.GetDrives();
@@ -42,7 +42,7 @@ namespace LR4
             return driverNames;
         }
 
-        private void initInfoAboutComputer()
+        private void InitInfoAboutComputer()
         {
             userName = Environment.UserName;
             computerName = Environment.MachineName;
@@ -50,33 +50,33 @@ namespace LR4
             pathOsConfig = Environment.GetFolderPath(Environment.SpecialFolder.Windows);
             countButtonMouse = SystemInformation.MouseButtons;
             widthScreen = SystemParameters.PrimaryScreenWidth;
-            diskNames = getDriveName();
+            diskNames = GetDriveName();
             selectedPath = "";
         }
 
-        private byte[] getHash(string inputString)
+        private byte[] GetHash(string inputString)
         {
             using (HashAlgorithm algorithm = SHA256.Create())
                 return algorithm.ComputeHash(Encoding.UTF8.GetBytes(inputString));
         }
         
-        private string getHashString(string inputString)
+        private string GetHashString(string inputString)
         {
             StringBuilder sb = new StringBuilder();
-            foreach (byte b in getHash(inputString))
+            foreach (byte b in GetHash(inputString))
                 sb.Append(b.ToString("X2"));
 
             return sb.ToString();
         }
 
-        private string getHashAboutComputer()
+        private string GetHashAboutComputer()
         {
             string stringForHash = userName + computerName + pathOs + pathOsConfig + countButtonMouse + widthScreen +
                                    diskNames + selectedDiskVolume;
-            return getHashString(stringForHash);
+            return GetHashString(stringForHash);
         }
 
-        private void writeInRegister(string keyForValue, string value)
+        private void WriteInRegister(string keyForValue, string value)
         {
             string keyPath = @"Software";
 
@@ -93,14 +93,14 @@ namespace LR4
             }
         }
 
-        private void writeHashInRegister()
+        private void WriteHashInRegister()
         {
-            string StudentLastName = "Liashenko";
-            string hash = getHashAboutComputer();
-            writeInRegister(StudentLastName, hash);
+            string studentLastName = "Liashenko";
+            string hash = GetHashAboutComputer();
+            WriteInRegister(studentLastName, hash);
         }
 
-        private void showInfoInForm()
+        private void ShowInfoInForm()
         {
             label8.Text = userName;
             label7.Text = computerName;
@@ -126,7 +126,7 @@ namespace LR4
             }
         }
 
-        private void setSelectedDiskVolume()
+        private void SetSelectedDiskVolume()
         {
             string selectedDriverName = selectedPath.Substring(0, 3);
             
@@ -143,7 +143,7 @@ namespace LR4
             label13.Text = selectedDiskVolume;
         }
         
-        private void installProgram()
+        private void InstallProgram()
         {
             string currentDirectory = Directory.GetCurrentDirectory();
             string fileName = "t1.txt";
@@ -154,8 +154,8 @@ namespace LR4
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            initInfoAboutComputer();
-            showInfoInForm();
+            InitInfoAboutComputer();
+            ShowInfoInForm();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -167,7 +167,7 @@ namespace LR4
             {
                 selectedPath = folderBrowserDialog.SelectedPath;
                 label17.Text = "Вибраний шлях: " + selectedPath;
-                setSelectedDiskVolume();
+                SetSelectedDiskVolume();
             }
         }
 
@@ -179,8 +179,8 @@ namespace LR4
                 return;
             }
             
-            installProgram();
-            writeHashInRegister();
+            InstallProgram();
+            WriteHashInRegister();
             MessageBox.Show("Програмне забезпечення встановлене!!!");
             Process.GetCurrentProcess().Kill();
         }
