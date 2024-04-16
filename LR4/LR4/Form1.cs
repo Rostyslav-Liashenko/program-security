@@ -146,7 +146,7 @@ namespace LR4
         private void InstallProgram()
         {
             string currentDirectory = Directory.GetCurrentDirectory();
-            string fileName = "t1.txt";
+            string fileName = "LR1.exe";
             string sourcePathFile = Path.Combine(currentDirectory, fileName);
             string destinationPathFile = Path.Combine(selectedPath, fileName);
             CopyFile(sourcePathFile, destinationPathFile);
