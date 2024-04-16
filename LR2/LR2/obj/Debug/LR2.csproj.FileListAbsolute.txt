@@ -1,0 +1,11 @@
+C:\Users\Rostyslav\Desktop\university\Security\LR2\LR2\bin\Debug\LR2.exe.config
+C:\Users\Rostyslav\Desktop\university\Security\LR2\LR2\bin\Debug\LR2.exe
+C:\Users\Rostyslav\Desktop\university\Security\LR2\LR2\bin\Debug\LR2.pdb
+C:\Users\Rostyslav\Desktop\university\Security\LR2\LR2\obj\Debug\LR2.csproj.AssemblyReference.cache
+C:\Users\Rostyslav\Desktop\university\Security\LR2\LR2\obj\Debug\LR2.csproj.SuggestedBindingRedirects.cache
+C:\Users\Rostyslav\Desktop\university\Security\LR2\LR2\obj\Debug\LR2.Properties.Resources.resources
+C:\Users\Rostyslav\Desktop\university\Security\LR2\LR2\obj\Debug\LR2.csproj.GenerateResource.cache
+C:\Users\Rostyslav\Desktop\university\Security\LR2\LR2\obj\Debug\LR2.csproj.CoreCompileInputs.cache
+C:\Users\Rostyslav\Desktop\university\Security\LR2\LR2\obj\Debug\LR2.exe
+C:\Users\Rostyslav\Desktop\university\Security\LR2\LR2\obj\Debug\LR2.pdb
+C:\Users\Rostyslav\Desktop\university\Security\LR2\LR2\obj\Debug\LR2.Form1.resources
