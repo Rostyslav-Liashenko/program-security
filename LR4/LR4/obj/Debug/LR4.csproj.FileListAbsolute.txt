@@ -8,3 +8,4 @@ C:\GitHubRepos\program-security\LR4\LR4\obj\Debug\LR4.csproj.GenerateResource.ca
 C:\GitHubRepos\program-security\LR4\LR4\obj\Debug\LR4.csproj.CoreCompileInputs.cache
 C:\GitHubRepos\program-security\LR4\LR4\obj\Debug\LR4.exe
 C:\GitHubRepos\program-security\LR4\LR4\obj\Debug\LR4.pdb
+C:\GitHubRepos\program-security\LR4\LR4\obj\Debug\LR4.Form1.resources
