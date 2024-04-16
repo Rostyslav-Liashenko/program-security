@@ -81,7 +81,7 @@
             // 
             this.label13.Location = new System.Drawing.Point(294, 265);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(263, 21);
+            this.label13.Size = new System.Drawing.Size(276, 37);
             this.label13.TabIndex = 15;
             this.label13.Text = "Об\'єм диска, на якому встановлена програма";
             // 
@@ -209,7 +209,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(12, 406);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(579, 29);
+            this.button1.Size = new System.Drawing.Size(579, 41);
             this.button1.TabIndex = 1;
             this.button1.Text = "Встановити";
             this.button1.UseVisualStyleBackColor = true;
@@ -237,7 +237,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 447);
+            this.ClientSize = new System.Drawing.Size(601, 459);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
