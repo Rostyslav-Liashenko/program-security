@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -124,6 +125,43 @@ namespace LR4
                 selectedPath = folderBrowserDialog.SelectedPath;
                 label17.Text = "Вибраний шлях: " + selectedPath;
             }
+        }
+
+        static void CopyFile(string sourceFilePath, string destinationFolderPath)
+        {
+            try
+            {
+                bool overWrite = true;
+                string destinationFilePath = destinationFolderPath;
+                File.Copy(sourceFilePath, destinationFilePath, overWrite);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Помилка при копіюванні файлу");
+            }
+        }
+        
+        private void installProgram()
+        {
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string fileName = "t1.txt";
+            string sourcePathFile = Path.Combine(currentDirectory, fileName);
+            string destinationPathFile = Path.Combine(selectedPath, fileName);
+            CopyFile(sourcePathFile, destinationPathFile);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (selectedPath == "")
+            {
+                MessageBox.Show("Виберіть шлях для встановлення");
+                return;
+            }
+            
+            installProgram();
+            writeHashInRegister();
+            MessageBox.Show("Програмне забезпечення встановлене!!!");
+            Process.GetCurrentProcess().Kill();
         }
     }
 }
