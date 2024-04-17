@@ -59,29 +59,31 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(12, 36);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(366, 22);
+            this.textBox1.Size = new System.Drawing.Size(502, 22);
             this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(12, 70);
+            this.label2.Location = new System.Drawing.Point(12, 71);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(366, 23);
+            this.label2.Size = new System.Drawing.Size(502, 33);
             this.label2.TabIndex = 2;
             this.label2.Text = "Вибраний файл:";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 96);
+            this.button1.Location = new System.Drawing.Point(12, 107);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(366, 30);
+            this.button1.Size = new System.Drawing.Size(502, 30);
             this.button1.TabIndex = 3;
             this.button1.Text = "Вибрати файл";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(12, 141);
+            this.label3.Location = new System.Drawing.Point(12, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(366, 23);
             this.label3.TabIndex = 4;
@@ -89,19 +91,20 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 167);
+            this.button3.Location = new System.Drawing.Point(12, 192);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(366, 38);
+            this.button3.Size = new System.Drawing.Size(502, 38);
             this.button3.TabIndex = 5;
             this.button3.Text = "Пошук";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(390, 216);
+            this.ClientSize = new System.Drawing.Size(526, 242);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
@@ -111,6 +114,7 @@
             this.Location = new System.Drawing.Point(15, 15);
             this.Name = "Form1";
             this.Text = "Лабораторна робота №6";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
