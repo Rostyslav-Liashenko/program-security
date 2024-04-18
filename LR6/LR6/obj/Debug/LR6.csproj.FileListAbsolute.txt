@@ -1,0 +1,10 @@
+C:\GitHubRepos\program-security\LR6\LR6\bin\Debug\LR6.exe.config
+C:\GitHubRepos\program-security\LR6\LR6\bin\Debug\LR6.exe
+C:\GitHubRepos\program-security\LR6\LR6\bin\Debug\LR6.pdb
+C:\GitHubRepos\program-security\LR6\LR6\obj\Debug\LR6.csproj.AssemblyReference.cache
+C:\GitHubRepos\program-security\LR6\LR6\obj\Debug\LR6.csproj.SuggestedBindingRedirects.cache
+C:\GitHubRepos\program-security\LR6\LR6\obj\Debug\LR6.Properties.Resources.resources
+C:\GitHubRepos\program-security\LR6\LR6\obj\Debug\LR6.csproj.GenerateResource.cache
+C:\GitHubRepos\program-security\LR6\LR6\obj\Debug\LR6.csproj.CoreCompileInputs.cache
+C:\GitHubRepos\program-security\LR6\LR6\obj\Debug\LR6.exe
+C:\GitHubRepos\program-security\LR6\LR6\obj\Debug\LR6.pdb
