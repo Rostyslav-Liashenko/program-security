@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace LR6
@@ -89,8 +88,9 @@ namespace LR6
         MessageBox.Show("Ви не вибрали файл");
         return;
       }
-      
-      SearchCompanion(selectedFilePath);
+
+      string selectedFolder = GetRootBySelectedFile();
+      SearchCompanion(selectedFolder);
     }
   }
 }
