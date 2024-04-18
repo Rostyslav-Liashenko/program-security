@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
@@ -8,6 +9,7 @@ namespace LR6
   {
 
     private string selectedFilePath;
+    private List<string> companionFilePaths;
 
 
     private void SetSelectedFilePath()
@@ -60,6 +62,7 @@ namespace LR6
 
         if (isCompanion)
         {
+          companionFilePaths.Add(filePath);
           listBox1.Items.Add(filePath);
         }
       }
@@ -74,6 +77,8 @@ namespace LR6
     public Form1()
     {
       InitializeComponent();
+      selectedFilePath = "";
+      companionFilePaths = new List<string>();
     }
 
     private void button1_Click(object sender, EventArgs e)
@@ -90,7 +95,59 @@ namespace LR6
       }
 
       string selectedFolder = GetRootBySelectedFile();
+      companionFilePaths.Clear();
+      
       SearchCompanion(selectedFolder);
+    }
+
+    private void DeleteFiles(List<string> filePaths)
+    {
+      foreach (string filePath in filePaths)
+      {
+        DeleteFile(filePath);
+      }
+    }
+    
+    private void DeleteFile(string filePath)
+    {
+      File.Delete(filePath);
+    }
+
+
+    private void MoveFiles(List<string> filePaths, string destPath)
+    {
+      foreach (string filePath in filePaths)
+      {
+        MoveFile(filePath, destPath);
+      }
+    }
+    
+    private void MoveFile(string sourcePath, string destionationPath)
+    {
+      File.Move(sourcePath, destionationPath);
+    }
+
+    private void MoveCompanions()
+    {
+      FolderBrowserDialog dialog = new FolderBrowserDialog();
+
+      if (dialog.ShowDialog() == DialogResult.OK)
+      {
+        string selectedDirectory = dialog.SelectedPath;
+        MoveFiles(companionFilePaths, selectedDirectory);
+      }
+    }
+
+    private void button3_Click_1(object sender, EventArgs e)
+    {
+      DeleteFiles(companionFilePaths);
+      MessageBox.Show("Видалення файлів успішне!");
+    }
+
+    private void button4_Click(object sender, EventArgs e)
+    {
+      MoveCompanions();
+      MessageBox.Show("Переміщення файлів успішне!");
     }
   }
 }
